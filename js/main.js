@@ -27,6 +27,10 @@ function PlayerMaker (number) {
         let newName = document.querySelector(`#p${this.number}Name`).value
         document.querySelector(`.player${this.number}Name`).innerText = newName
         this.name = newName
+    },
+    this.scoreSetter = function () {
+        document.querySelector(`.player${this.number}Wins`).innerText = `Wins: ${this.wins}`
+        document.querySelector(`.player${this.number}Draws`).innerText = `Draws: ${this.draws}`
     }
 }
 
@@ -99,15 +103,20 @@ const board = {
                 alert(`${player2.name} Wins`)
                 player2.wins++
                 console.log(player2.wins)
+                player2.scoreSetter()
             } else {
                 alert(`${player1.name} Wins`)
                 player1.wins++
                 console.log(player1.wins)
+                player1.scoreSetter()
             }
-            alert("huzzah")
             board.winScreen = true
         } else if (isfull == 9) {
             alert("MEOW! That's a cat!")
+            player1.draws++
+            player2.draws++
+            player1.scoreSetter()
+            player2.scoreSetter()
         }
     }
 }
