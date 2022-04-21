@@ -46,7 +46,7 @@
     border: 5px groove grey;
 }
 
-button {
+#newGame {
   position: absolute;  
   bottom: 0;
   left: 50%;
@@ -70,10 +70,25 @@ button {
     background-color: white;
     border: 5px groove grey;
     width: 50%;
+    padding: 1px;
+}
+
+.player1 > p, .player2 > p {
+    padding: 0;
+    margin: 5px;
 }
 
 .players {
     text-align: center;
     position: absolute;
+    width: 60%;
+}
+
+.nameSet {
+    width: 100%;
+    padding: 0 10px;
+}
+
+input {
     width: 50%;
 }
