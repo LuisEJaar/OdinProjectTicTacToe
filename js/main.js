@@ -138,7 +138,6 @@ const newGameButton = {
     
 }
 
-
 newGameButton.button()
 board.newGame()
 board.runningGame()

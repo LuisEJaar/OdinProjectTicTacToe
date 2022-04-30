@@ -3,6 +3,13 @@
     user-select: none;
 }
 
+body {
+    height: 100vh;
+    background-image: url(../img/table.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .gameField div {
     float:left;
     
@@ -64,6 +71,15 @@
     font-size: 200px;
     text-align: center;
     line-height: 87%;
+    border-radius: 12px;
+}
+
+.tile:hover {
+    background-color: rgb(153, 145, 145);
+}
+
+.tile:active {
+    background-color: green;
 }
 
 .player1, .player2 {
@@ -71,6 +87,7 @@
     border: 5px groove grey;
     max-width: 45%;
     padding: 1px;
+    min-height: 140px;
 }
 
 .player1 > p, .player2 > p {
