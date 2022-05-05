@@ -8,24 +8,33 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+    <div class="introField">
+        
+    </div>
+
     <div class="gameField ">
         <div class="players">
             <div class="player1">
-                <p class="player1Name">Player: 1</p>
-                <p class="player1Wins">Wins: 0</p>
-                <p class="player1Draws">Draws: 0</p>
-                <div class="nameSet">
-                    <input type="text" placeholder="name" id="p1Name">
-                    <button id="player1">Set</button>
+                <div>
+                    <p class="player1Name">Player: 1</p>
+                    <p class="player1Wins">Wins: 0</p>
+                    <div class="nameSet">
+                        <input type="text" placeholder="name" id="p1Name">
+                        <button id="player1">Set</button>
+                    </div>
                 </div>
             </div>
+            <div class="playerDraws">
+                <h1 class="player1Draws">Draws: 0</h1>
+            </div>
             <div class="player2">
-                <p class="player2Name">Player: 2</p>
-                <p class="player2Wins">Wins: 0</p>
-                <p class="player2Draws">Draws: 0</p>
-                <div class="nameSet">
-                    <input type="text" placeholder="name" id="p2Name">
-                    <button id="player2">Set</button>
+                <div>
+                    <p class="player2Name">Player: 2</p>
+                    <p class="player2Wins">Wins: 0</p>
+                    <div class="nameSet">
+                        <input type="text" placeholder="name" id="p2Name">
+                        <button id="player2">Set</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,6 +43,11 @@
             <button id="newGame">New Game</button>
         </div>
     </div>
+
+    <div>
+
+    </div>
+
     <script src="./js/main.js"></script>
 </body>
 </html>
