@@ -66,7 +66,7 @@ body {
     color: white;
     width: 29.3%;
     height: 29.3%;
-    border: 3px groove grey;
+    border: 3px groove orangered;
     float: left;
     margin: 2%;
     font-size: 200px;
@@ -88,7 +88,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: white;
-    border: 5px groove grey;
+    border: 5px groove royalblue;
     width: 30%;
     min-height: 140px;
 }
