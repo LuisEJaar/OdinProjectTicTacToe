@@ -74,11 +74,11 @@ body {
     border-radius: 12px;
 }
 
-.tile:hover {
+.clickable:hover {
     background-color: rgb(153, 145, 145);
 }
 
-.tile:active {
+.clickable:active {
     background-color: green;
 }
 

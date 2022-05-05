@@ -57,6 +57,7 @@ const board = {
             const gameBoard = document.querySelector(".board")
             const newSquare = document.createElement("div")
             newSquare.classList.add("tile")
+            newSquare.classList.add("clickable")
             newSquare.setAttribute("id",`array${i}`)
             gameBoard.appendChild(newSquare)
         }
@@ -75,12 +76,26 @@ const board = {
             if (e.target.innerHTML === "" && board.winScreen === false) {   
                 if (board.currentTurn % 2 != 0) {
                     e.target.innerHTML = "X"
+                    e.target.classList.remove("clickable")
                 } else {
                     e.target.innerHTML = "O"
+                    e.target.classList.remove("clickable")
                 }
+
+               setTimeout(() => {
                 board.winCalculator(e)
+               }, 2);
+
                 board.currentTurn++
             }
+        }
+    },
+
+    closedGame: () => {
+        let boxes = document.querySelectorAll(".tile")
+        for(let box of boxes) {
+            box.classList.remove("clickable")
+            console.log(box)
         }
     },
 
@@ -98,17 +113,22 @@ const board = {
         (board.boardArray[4] == board.boardArray[5] && board.boardArray[5] == board.boardArray[6]) || 
         (board.boardArray[7] == board.boardArray[8] && board.boardArray[8] == board.boardArray[9]) ||
         (board.boardArray[1] == board.boardArray[5] && board.boardArray[5] == board.boardArray[9]) ||
-        (board.boardArray[3] == board.boardArray[5] && board.boardArray[5] == board.boardArray[7])) {
+        (board.boardArray[3] == board.boardArray[5] && board.boardArray[5] == board.boardArray[7]) || 
+        (board.boardArray[1] == board.boardArray[4] && board.boardArray[4] == board.boardArray[7]) || 
+        (board.boardArray[2] == board.boardArray[5] && board.boardArray[5] == board.boardArray[8]) ||
+        (board.boardArray[3] == board.boardArray[6] && board.boardArray[6] == board.boardArray[9])) {
             if (board.currentTurn % 2 === 0) {
                 alert(`${player2.name} Wins`)
                 player2.wins++
                 console.log(player2.wins)
                 player2.scoreSetter()
+                board.closedGame()
             } else {
                 alert(`${player1.name} Wins`)
                 player1.wins++
                 console.log(player1.wins)
                 player1.scoreSetter()
+                board.closedGame()
             }
             board.winScreen = true
         } else if (isfull == 9) {
@@ -117,6 +137,7 @@ const board = {
             player2.draws++
             player1.scoreSetter()
             player2.scoreSetter()
+            board.closedGame()
         }
     }
 }
